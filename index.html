@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/5e9bce2ee8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Gallery</title>
+  </head>
+  <body>
+    <div class="gallery-wrapper">
+      <i id="backBtn" class="fa-regular fa-circle-left"></i>
+      <div class="gallery">
+        <div>
+          <span><img src="img/pic1.jpg" /> </span>
+          <span><img src="img/pic2.jpg" /> </span>
+          <span><img src="img/pic3.jpg" /></span>
+        </div>
+        <div>
+          <span><img src="img/pic4.jpg" /></span>
+          <span><img src="img/pic5.jpg" /></span>
+          <span><img src="img/pic6.jpeg" /></span>
+        </div>
+        <div>
+          <span><img src="img/pic7.jpeg" /></span>
+          <span><img src="img/pic8.jpg" /></span>
+          <span><img src="img/pic9.jpg" /></span>
+        </div>
+      </div>
+      <i id="nextBtn" class="fa-regular fa-circle-right"></i>
+    </div>
+    <script>
+      let scrollContent = document.querySelector(".gallery");
+      let backBtn = document.querySelector("#backBtn");
+      let nextBtn = document.querySelector("#nextBtn");
+
+      scrollContent.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        scrollContent.scrollLeft += e.deltaY;
+      });
+
+      nextBtn.addEventListener("click", () => {
+        scrollContent.style.scrollBehavior = "smooth";
+        scrollContent.scrollLeft += 1010;
+      });
+
+      backBtn.addEventListener("click", () => {
+        scrollContent.style.scrollBehavior = "smooth";
+        scrollContent.scrollLeft -= 1010;
+      });
+    </script>
+  </body>
+</html>
